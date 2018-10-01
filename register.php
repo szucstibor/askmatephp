@@ -27,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $table_users = $row['username'];
         if ($username == $table_users){
             $bool = false;
-            Print '<script>alert("Username has been taken");</script>';
-            Print '<script>window.location.assign("register.php")</script>';
+                Print '<script>alert("Username has been taken");</script>';
+                Print '<script>window.location.assign("register.php")</script>';
         }
     }
 
