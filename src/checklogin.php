@@ -1,7 +1,7 @@
 <?php
+require ("Link.php");
 session_start();
-$link = new Link();
-$username = mysqli_real_escape_string($link::getLink(), $_POST['username']);
+$username = mysqli_real_escape_string($link, $_POST['username']);
 $password = mysqli_real_escape_string($link, $_POST['password']);
 mysqli_select_db($link, "ask_mate");
 $query = mysqli_query($link, "SELECT * FROM user WHERE username='$username'");
