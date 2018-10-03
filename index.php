@@ -7,8 +7,8 @@
         <?php
         echo "<p>askm8</p>";
         ?>
-        <a href="register.php">register</a>
-        <a href="login.php">Login</a>
+        <a href="src/register.php">register</a>
+        <a href="src/login.php">Login</a>
     </body>
 </html>
 
