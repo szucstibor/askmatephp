@@ -6,7 +6,7 @@
  * Time: 13:47
  */
 
-class Answer
+class Answer extends Reply
 {
     private $reply;
     private $datePosted;
