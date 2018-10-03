@@ -80,6 +80,6 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-src/link.php
+src/Link.php
 
 # End of https://www.gitignore.io/api/phpstorm
