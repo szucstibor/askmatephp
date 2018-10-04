@@ -7,9 +7,6 @@ else{
     header("location:home.php");
 }
 
-
-Print "$time - $date";
-
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $user = $_SESSION['user_id'];
