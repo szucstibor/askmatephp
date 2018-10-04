@@ -18,9 +18,10 @@
 <?php
 require ("Link.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = mysqli_real_escape_string($link, $_POST["username"]);
-    $password = mysqli_real_escape_string($link, $_POST["password"]);
-    $email = mysqli_real_escape_string($link, $_POST["email"]);
+
+    $username = mysqli_real_escape_string($link, $_POST['username']);
+    $password = mysqli_real_escape_string($link, $_POST['password']);
+    $email = mysqli_real_escape_string($link, $_POST['email']);
     $bool = true;
 
     mysqli_select_db($link, "ask_mate");
@@ -31,11 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         if ($username == $table_users){
             $bool = false;
             Print '<script>alert("Username has been taken");</script>';
-            Print '<script>window.location.assign("src/register.php")</script>';
+            Print '<script>window.location.assign("register.php")</script>';
         } elseif ($table_email == $email) {
             $bool = false;
             Print '<script>alert("Email address is already in use");</script>';
-            Print '<script>window.location.assign("src/register.php")</script>';
+            Print '<script>window.location.assign("register.php")</script>';
         }
 
     }
