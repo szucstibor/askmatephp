@@ -11,6 +11,10 @@ echo $_SESSION['user'];
 ?>
 <a href="logout.php">Logout</a>
 <br>
+<form  action="search.php" method="post">
+    <input placeholder="Search..." name="query" maxlength="255" required="required"/>
+    <input value="Search" type="submit"/>
+</form>
 <form action="add.php" method="post">
     Ask a question (255 characters):
     <br/>
