@@ -38,8 +38,9 @@ echo $_SESSION['user'];
     $query = mysqli_query($link, "SELECT * FROM question");
     while ($row = mysqli_fetch_array($query)) {
         Print "<tr>";
-        Print "<td align='center'>" . $row['title'];
-        "</td>";
+        $title = $row['title'];
+        Print '
+        <td align="center"><a href="question.php?id='. $row['id']. '">'.$row['title'];'</a></td>'; //15 minutes of messing with quotes
         Print "<td align='center'>" . $row['date_posted'];
         "</td>";
         Print "<td align='center'>X</td>";
