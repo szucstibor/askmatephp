@@ -1,36 +1,47 @@
 <html>
-<head>
-    <title>Home page</title>
-</head>
-<?php
-session_start();
-if($_SESSION['user']){
-}
-else{
-    header("location: login.php");
-}
-$user = $_SESSION ['user'];
-?>
-
-<body>
-    <h2>Home page</h2>
-    <a href="logout.php">Logout</a>
-
-    <?php Print "<p>". $user.": Hello there</p>";
-        Print"<p>Server: ".$user."!</p>"; ?>
-    <form action="add.php" method="post">
-        Ask a question (100 characters):<br/> <textarea placeholder="Question Title..." name="questiontitle" maxlength="100" required="required"></textarea><br/>
-        Detailed description (1000 characters): <br/><textarea placeholder="Question goes here..." name="questiondesc" maxlength="1000" required="required"></textarea>
-        <input type="submit" value="Submit question" />
-    </form>
-    <h2>My questions</h2>
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Description</td>
-            <td>Amount of answers</td>
-        </tr>
-    </table>
-</body>
+    <head>
+        <title>
+            AskM8
+        </title>
+    </head>
+    <body>
+         <?php
+            session_start();
+                echo $_SESSION['user'];
+             ?>
+        <a href="logout.php">Logout</a>
+        <br>
+         <form action="add.php" method="post">
+             Ask a question (255 characters):
+             <br/>
+             <textarea placeholder="Question Title..." name="title" maxlength="255" required="required"></textarea>
+             <br/>
+             Detailed description (1000 characters):
+             <br/>
+             <textarea placeholder="Question goes here..." name="description" maxlength="1000" required="required"></textarea>
+             <input type="submit" value="Submit question" />
+         </form>
+         <h2>My questions</h2>
+         <table>
+             <tr>
+                 <td>Title</td>
+                 <td>Date</td>
+                 <td>Amount of answers</td>
+                 <td>User</td>
+             </tr>
+             <?php
+                require ("Link.php");
+                $query = mysqli_query($link, "SELECT * FROM question");
+                while($row = mysqli_fetch_array($query))
+                {
+                    echo "
+                    <tr>";$row['title'];"</tr>
+                    <tr>";$row['date_posted'];"</tr>
+                    <tr>";"</tr>
+                    <tr>";$row['user_id'];"</tr>
+                    ";
+                }
+             ?>
+         </table>
+    </body>
 </html>
