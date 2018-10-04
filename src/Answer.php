@@ -8,5 +8,5 @@
 
 class Answer extends Reply
 {
-    
+
 }
