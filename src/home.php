@@ -40,7 +40,7 @@ echo $_SESSION['user'];
         Print "<tr>";
         $title = $row['title'];
         Print '
-        <td align="center"><a href="question.php?id='. $row['id']. '">'.$row['title'];'</a></td>'; //15 minutes of messing with quotes
+        <td align="center"><a href="display_question.php?id='. $row['id']. '">'.$row['title'];'</a></td>'; //15 minutes of messing with quotes
         Print "<td align='center'>" . $row['date_posted'];
         "</td>";
         Print "<td align='center'>X</td>";
